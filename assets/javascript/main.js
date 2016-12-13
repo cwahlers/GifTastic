@@ -18,7 +18,7 @@ $(document).on("click",".btn", function() {
   var btnValue = ($(this).data("btnvalue"));
   console.log(btnValue);
   // URL to be called from API
-  var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + btnValue + "&limit=10";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + btnValue + "&limit=10";
   // API to GET data from queryURL
   $.ajax({
     url: queryURL,
