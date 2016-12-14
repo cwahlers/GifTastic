@@ -28,9 +28,15 @@ $(document).on("click",".btn", function() {
       console.log(response);
       console.log(Object.keys(response.data).length);
       for (var i = 0; i < Object.keys(response.data).length; i++) {
+        var imageDiv = $('<div class="imagediv">');
         var urlStill = response.data[i].images.original_still.url;
         var urlAnimate = response.data[i].images.original.url;
-        $(".results").append($("<img>").addClass('image' + i).attr("src", urlStill).attr('data-imgnum', i).attr('data-otherurl', urlAnimate));
+        var image = $("<img>").addClass('image' + i).attr("src", urlStill).attr('data-imgnum', i).attr('data-otherurl', urlAnimate);
+        var rating = $("<p>").text("Rated: " + response.data[i].rating );
+        imageDiv.prepend(rating);
+        imageDiv.prepend(image);
+        $(".results").append(imageDiv);
+        //$(".results").append($("<img>").addClass('image' + i).attr("src", urlStill).attr('data-imgnum', i).attr('data-otherurl', urlAnimate));
       }
   });
 });

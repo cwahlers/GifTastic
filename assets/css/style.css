@@ -33,6 +33,10 @@ img{
   font-size: 15px;
 }
 
+.imagediv{
+  float: left;
+}
+
 .results{
   float: left;
   width: 70%;
